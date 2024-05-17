@@ -17,6 +17,15 @@ if($_SERVER["REQUEST_METHOD"]== "POST"){
 
     // header("location:registration_succes.php");
 
+    $nameErr = $emailErr = $genderErr = $websiteErr = "";
+    $firstname = $email = $gender = $comment = $website = "";
+
+    if(empty($_POST["firstname"])){
+        $nameErr = "Name is Required";
+    }else{
+        $firstname = test_input($_POST["firstname"]);
+    }
+
 }
 
 function validate($data){
