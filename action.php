@@ -7,6 +7,19 @@ if($_SERVER["REQUEST_METHOD"]== "POST"){
     $password = validate($_POST["password"]);
 
     
+
+    // header("location:registration_succes.php");
+
+    $nameErr = $emailErr = $email=$password = ""; 
+    $firstname = $email = $gender = $comment = $website = "";
+
+    if(empty($_POST["firstname"])){
+        $nameErr = "Name is Required";
+    }else{
+        $firstname = validate($_POST["firstname"]);
+    }
+
+    
     echo "$firstname";
     echo "<br>";
     echo "$lastname";
@@ -14,17 +27,6 @@ if($_SERVER["REQUEST_METHOD"]== "POST"){
     echo "$email";
     echo "<br>";
     echo "$password";
-
-    // header("location:registration_succes.php");
-
-    $nameErr = $emailErr = $genderErr = $websiteErr = "";
-    $firstname = $email = $gender = $comment = $website = "";
-
-    if(empty($_POST["firstname"])){
-        $nameErr = "Name is Required";
-    }else{
-        $firstname = test_input($_POST["firstname"]);
-    }
 
 }
 
